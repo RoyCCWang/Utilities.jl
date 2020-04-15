@@ -1,0 +1,16 @@
+# see official guide at:
+# https://gitlab.com/help/ci/quick_start/README
+
+# Or, Julia-specific guide at:
+# https://gitlab.com/tkpapp/GitlabJuliaDemo.jl/-/blob/master/.gitlab-ci.yml
+
+image: julia:1.4
+
+before_script:
+  # workaround for https://github.com/JuliaDocs/Documenter.jl/issues/686
+  - apt-get -qq update; apt-get -y install git
+  - julia --project=@. -e "import Pkg; Pkg.build()"
+
+default:
+  script:
+    - julia --project test/run_tests.jl
