@@ -9,7 +9,7 @@ import Printf
 
 import HCubature
 
-#import Distributions
+import Distributions
 import GSL
 import SpecialFunctions
 
