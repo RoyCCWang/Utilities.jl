@@ -39,6 +39,7 @@ include("data_structures.jl")
 include("simplex.jl")
 include("function_interpolation.jl")
 include("numerical.jl")
+include("synthetic_densities.jl")
 
 export  isnumericallyclose, # bounds.jl
         isnumericallyin,
@@ -75,6 +76,10 @@ export  isnumericallyclose, # bounds.jl
         forcesamesizeafterlinearconv,
         fastlinearconv,
         circconv,
+
+        # synthetic_densities.jl
+        generaterandomGMM,
+        getGMMdist,
 
         # template_signals.jl
         rectfunc,
