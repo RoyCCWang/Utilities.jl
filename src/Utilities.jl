@@ -4,7 +4,7 @@ module Utilities
 using FFTW
 import Random
 using LinearAlgebra
-#import PyPlot
+import PyPlot
 import Printf
 
 import HCubature
@@ -20,9 +20,9 @@ import StatsFuns
 import Test
 
 include("declarations.jl")
-#include("visualize_DSP.jl")
-#include("visualize.jl")
-#include("visualize_2D.jl")
+include("visualize_DSP.jl")
+include("visualize.jl")
+include("visualize_2D.jl")
 include("matrix.jl")
 include("approximations.jl")
 include("geometric_transforms.jl")
@@ -111,11 +111,11 @@ export  isnumericallyclose, # bounds.jl
 
 
         # # visualize.jl
-        # visualizsignals,
-        # visualizefbmagrsp,
-        # plotmagnitudersp,
-        # plotphasersp,
-        # getfreqrsp
+        visualizsignals,
+        visualizefbmagrsp,
+        plotmagnitudersp,
+        plotphasersp,
+        getfreqrsp
 
         # drawRV.jl
         drawfromuniformindexinterval,
@@ -133,8 +133,8 @@ export  isnumericallyclose, # bounds.jl
         drawstdnormalcdf!
 
         # # visualize_2D.jl
-        # visualizemeshgridpcolor,
-        # plot2Dhistogram,
+        visualizemeshgridpcolor,
+        plot2Dhistogram,
 
         # probability.jl
         getnormalizedensity,
@@ -156,7 +156,7 @@ export  isnumericallyclose, # bounds.jl
         Euclideantosimplex,
 
         # # visualize.jl
-        # plothistogram,
+        plothistogram,
 
         # function_interpolation
         setupcubicitp,
