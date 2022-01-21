@@ -1,7 +1,7 @@
 
 # to do: fix this markdown.
 """
-    setupcubicitp(ϕ::Array{T,D}, x_ranges::Vector{LinRange{T}}, amplification_factor::T)
+    setupcubicitp(ϕ::Array{T,D}, x_ranges::Vector{LinRange{T,L}}, amplification_factor::T)
 
 
 Separable cubic spline interpolation on compact interval, with gain parameter.
@@ -16,7 +16,7 @@ Returns:    `f` is the interpolated function.
             `df` is the gradient of `f`.
             `d2f` is the Hessian of `f`. It throws an error if evaluated at any x in the compact interval that is specified by `x_ranges`.
 """
-function setupcubicitp(ϕ::Array{T,D}, x_ranges::Vector{LinRange{T}}, amplification_factor::T) where {T,D}
+function setupcubicitp(ϕ::Array{T,D}, x_ranges::Vector{LinRange{T,L}}, amplification_factor::T) where {T,D,L}
 
     @assert D == length(x_ranges)
     N_array = collect( length(x_ranges[d]) for d = 1:D )
@@ -100,7 +100,7 @@ end
 
 
 # # WIP: what is with the hessian?
-# function setupcubicitpmutator(ϕ::Array{T,D}, x_ranges::Vector{LinRange{T}}, amplification_factor::T) where {T,D}
+# function setupcubicitpmutator(ϕ::Array{T,D}, x_ranges::Vector{LinRange{T,L}}, amplification_factor::T) where {T,D,L}
 #
 #     @assert D == length(x_ranges)
 #     N_array = collect( length(x_ranges[d]) for d = 1:D )

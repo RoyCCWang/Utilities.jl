@@ -116,8 +116,8 @@ end
 
 
 # tensor product filtering for dimension D discrete signal.
-function ranges2collection( x_ranges::Vector{LinRange{T}},
-                            ::Val{D}) where {T,D}
+function ranges2collection( x_ranges::Vector{LinRange{T,L}},
+                            ::Val{D}) where {T,D,L}
     # set up.
     @assert !isempty(x_ranges)
     @assert length(x_ranges) == D
@@ -139,15 +139,16 @@ function ranges2collection( x_ranges::Vector{LinRange{T}},
 end
 
 """
-avgsumovergrid( x_ranges::Vector{LinRange{T}},
-                p::Function,
-                ::Val{D})::T
+avgsumovergrid( x_ranges::Vector{LinRange{T,L}},
+    p::Function,
+    ::Val{D})::T
 
 Approximates an integral.
 """
-function avgsumovergrid( x_ranges::Vector{LinRange{T}},
-                        p::Function,
-                            ::Val{D})::T where {T,D}
+function avgsumovergrid( x_ranges::Vector{LinRange{T,L}},
+    p::Function,
+    ::Val{D})::T where {T,D,L}
+
     # set up.
     @assert !isempty(x_ranges)
     @assert length(x_ranges) == D
