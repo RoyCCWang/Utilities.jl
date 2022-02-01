@@ -1,5 +1,5 @@
 
-module RWJuliaUtilities
+module RWUtilities
 
 using FFTW
 import Random
