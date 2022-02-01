@@ -1,4 +1,4 @@
-name = "Utilities"
+name = "RWJuliaUtilities"
 uuid = "c16f81ae-bc18-4c85-8dee-b67f3150a483"
 authors = ["RoyCCWang <rwang013@uottawa.ca>"]
 version = "0.1.1"
